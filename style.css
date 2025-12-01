@@ -85,6 +85,22 @@ section h2 {
   font-size: 1.8rem;
 }
 
+/* --- JavaScript Scroll Reveal Animation Styles --- */
+
+/* Initial state (hidden) */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Transition applied to opacity and transform over 0.8s */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Final state (revealed by JS) */
+.hidden-section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Projects */
 .projects {
   display: flex;
