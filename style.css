@@ -1,8 +1,12 @@
-/* Reset & Body */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 80px; 
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,7 +23,6 @@ body {
   padding: 20px 0;
 }
 
-/* Header */
 header {
   background: linear-gradient(135deg, #0077b6, #00b4d8);
   color: #fff;
@@ -72,7 +75,52 @@ header {
   color: #ffdd00;
 }
 
-/* Sections */
+#navbar {
+  background: #023e8a; 
+  padding: 0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 0; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #0077b6; 
+  color: #fff;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 section {
   padding: 20px 0;
 }
@@ -85,29 +133,23 @@ section h2 {
   font-size: 1.8rem;
 }
 
-/* --- JavaScript Scroll Reveal Animation Styles --- */
-
-/* Initial state (hidden) */
 .hidden-section {
     opacity: 0;
     transform: translateY(30px);
-    /* Transition applied to opacity and transform over 0.8s */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Final state (revealed by JS) */
 .hidden-section.reveal {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Projects */
 .projects {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  align-items: stretch; /* makes all cards same height */
+  align-items: stretch; 
 }
 
 .project-card {
@@ -118,8 +160,8 @@ section h2 {
   max-width: 500px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: column;       /* stack content vertically */
-  justify-content: space-between; /* pushes button to bottom */
+  flex-direction: column;       
+  justify-content: space-between; 
 }
 
 .project-card ul {
@@ -127,7 +169,7 @@ section h2 {
 }
 
 .btn {
-  align-self: flex-start; /* keeps button on left */
+  align-self: flex-start; 
   margin-top: 20px;
   background: #0077b6;
   color: #fff;
@@ -142,7 +184,6 @@ section h2 {
   background: #023e8a;
 }
 
-/* Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -164,7 +205,6 @@ section h2 {
   background: #023e8a;
 }
 
-/* Education */
 .edu-card {
   background: #fff;
   padding: 20px;
@@ -175,7 +215,6 @@ section h2 {
   text-align: left;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -184,7 +223,6 @@ footer {
   font-weight: 500;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .profile {
     flex-direction: column;
@@ -193,5 +231,41 @@ footer {
   .projects {
     flex-direction: column;
     align-items: center;
+  }
+
+  .nav-content {
+    justify-content: space-between;
+    padding: 15px; 
+  }
+
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 55px; 
+    left: 0;
+    background: #023e8a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .burger-menu {
+    display: block; 
   }
 }
